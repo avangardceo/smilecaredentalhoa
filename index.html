@@ -229,9 +229,13 @@ section{padding:5rem 2rem}
 .form-privacy label{font-size:.78rem;color:var(--color-text-muted);line-height:1.5}
 .btn-submit{width:100%;padding:.875rem;border:none;border-radius:var(--radius-md);background:var(--color-primary);color:white;font-family:var(--font-body);font-weight:700;font-size:.9rem;cursor:pointer;transition:background var(--transition),transform var(--transition)}
 .btn-submit:hover{background:var(--color-primary-dk);transform:translateY(-1px)}
-.whatsapp-alt{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.75rem;padding:.7rem;border:1.5px solid #25d366;border-radius:var(--radius-md);color:#25d366;font-weight:600;font-size:.85rem;transition:all var(--transition)}
+.contact-msg-btns{display:grid;grid-template-columns:1fr 1fr;gap:.625rem;margin-top:.75rem}
+.whatsapp-alt{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.7rem;border:1.5px solid #25d366;border-radius:var(--radius-md);color:#25d366;font-weight:600;font-size:.85rem;transition:all var(--transition)}
 .whatsapp-alt:hover{background:#f0fdf6}
 .whatsapp-alt svg{width:17px;height:17px;fill:#25d366}
+.zalo-alt{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.7rem;border:1.5px solid #0068ff;border-radius:var(--radius-md);color:#0068ff;font-weight:600;font-size:.85rem;transition:all var(--transition)}
+.zalo-alt:hover{background:#e8f0ff}
+.zalo-alt svg{width:17px;height:17px}
 
 /* ── FOOTER ── */
 footer{background:var(--color-dark);color:rgba(255,255,255,.65);padding:3rem 2rem 2rem}
@@ -284,6 +288,18 @@ footer{background:var(--color-dark);color:rgba(255,255,255,.65);padding:3rem 2re
   .gallery-grid{grid-template-columns:1fr 1fr}
   .hero-ctas{flex-direction:column}
 }
+
+/* ── FLOATING BADGES ── */
+.float-badges{position:fixed;right:1.25rem;bottom:4.5rem;z-index:98;display:flex;flex-direction:column;gap:.625rem}
+.float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform var(--transition),box-shadow var(--transition);position:relative}
+.float-btn:hover{transform:translateY(-3px) scale(1.08);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.float-btn svg{width:28px;height:28px}
+.float-btn-wa{background:#25d366}
+.float-btn-zalo{background:#0068ff}
+.float-tooltip{position:absolute;right:62px;top:50%;transform:translateY(-50%);background:rgba(20,20,20,.85);color:white;font-size:.75rem;font-weight:600;padding:.3rem .7rem;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity var(--transition)}
+.float-btn:hover .float-tooltip{opacity:1}
+.float-tooltip::after{content:'';position:absolute;right:-5px;top:50%;transform:translateY(-50%);border:5px solid transparent;border-right:none;border-left-color:rgba(20,20,20,.85)}
+@media(max-width:768px){.float-badges{right:.875rem;bottom:4.25rem}.float-btn{width:46px;height:46px}.float-btn svg{width:24px;height:24px}}
 </style>
 </head>
 <body>
@@ -614,7 +630,7 @@ footer{background:var(--color-dark);color:rgba(255,255,255,.65);padding:3rem 2re
   <div class="section-inner">
     <p class="section-eyebrow" data-en="Get in Touch" data-vi="Liên Hệ">Get in Touch</p>
     <h2 class="section-title" data-en="Book Your Appointment with Dr. Hoa" data-vi="Đặt Lịch Hẹn Với BS. Hoa">Book Your Appointment with Dr. Hoa</h2>
-    <p class="section-sub" data-en="Call, WhatsApp or fill in the form. We'll confirm your booking within a few hours during clinic hours." data-vi="Gọi điện, nhắn WhatsApp hoặc điền form. Chúng tôi sẽ xác nhận trong vài giờ trong giờ làm việc.">Call, WhatsApp or fill in the form. We'll confirm your booking within a few hours during clinic hours.</p>
+    <p class="section-sub" data-en="Call, WhatsApp, Zalo or fill in the form. We'll confirm your booking within a few hours during clinic hours." data-vi="Gọi điện, nhắn WhatsApp, Zalo hoặc điền form. Chúng tôi sẽ xác nhận trong vài giờ trong giờ làm việc.">Call, WhatsApp, Zalo or fill in the form. We'll confirm your booking within a few hours during clinic hours.</p>
     <div class="contact-grid">
       <div>
         <div class="info-block">
@@ -627,7 +643,7 @@ footer{background:var(--color-dark);color:rgba(255,255,255,.65);padding:3rem 2re
           </div>
           <div class="info-row">
             <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-            <div class="info-content"><a href="tel:+84889298858">0889 298 858</a><p data-en="Also available on WhatsApp" data-vi="Cũng có trên WhatsApp">Also available on WhatsApp</p></div>
+            <div class="info-content"><a href="tel:+84889298858">0889 298 858</a><p data-en="WhatsApp &amp; Zalo available" data-vi="Có WhatsApp &amp; Zalo">WhatsApp &amp; Zalo available</p></div>
           </div>
           <div class="info-row">
             <div class="info-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
@@ -645,10 +661,19 @@ footer{background:var(--color-dark);color:rgba(255,255,255,.65);padding:3rem 2re
             <a href="https://maps.google.com/?q=118+Phạm+Cự+Lượng+An+Hải+Đà+Nẵng" target="_blank" rel="noopener" style="display:inline-block;margin-top:.625rem;font-size:.8rem;font-weight:600;color:var(--color-primary)" data-en="Open in Google Maps →" data-vi="Mở Google Maps →">Open in Google Maps →</a>
           </div>
         </div>
-        <a href="https://wa.me/84889298858?text=Hello+Dr.+Hoa!+I'd+like+to+book+an+appointment+at+Smile+Care+Dental+Clinic." class="whatsapp-alt" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          <span data-en="Message Dr. Hoa on WhatsApp" data-vi="Nhắn Tin WhatsApp Cho BS. Hoa">Message Dr. Hoa on WhatsApp</span>
-        </a>
+        <div class="contact-msg-btns">
+          <a href="https://wa.me/84889298858?text=Hello+Dr.+Hoa!+I'd+like+to+book+an+appointment+at+Smile+Care+Dental+Clinic." class="whatsapp-alt" target="_blank" rel="noopener" aria-label="Message on WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span data-en="WhatsApp" data-vi="WhatsApp">WhatsApp</span>
+          </a>
+          <a href="https://zalo.me/84889298858" class="zalo-alt" target="_blank" rel="noopener" aria-label="Message on Zalo">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <rect width="48" height="48" rx="10" fill="#0068ff"/>
+              <text x="24" y="33" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">Zalo</text>
+            </svg>
+            <span data-en="Zalo" data-vi="Zalo">Zalo</span>
+          </a>
+        </div>
       </div>
       <div>
         <form id="bookingForm" novalidate>
@@ -709,6 +734,7 @@ footer{background:var(--color-dark);color:rgba(255,255,255,.65);padding:3rem 2re
         <h4 data-en="Contact" data-vi="Liên Hệ">Contact</h4>
         <a href="tel:+84889298858">0889 298 858</a>
         <a href="https://wa.me/84889298858" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://zalo.me/84889298858" target="_blank" rel="noopener">Zalo</a>
         <a href="https://maps.google.com/?q=118+Phạm+Cự+Lượng+An+Hải+Đà+Nẵng" target="_blank" rel="noopener" data-en="Get Directions" data-vi="Chỉ Đường">Get Directions</a>
         <a href="#contact" data-en="Book Appointment" data-vi="Đặt Lịch">Book Appointment</a>
       </div>
@@ -759,5 +785,26 @@ document.getElementById('bookingForm').addEventListener('submit',function(e){
   btn.style.background='var(--color-success)';btn.disabled=true;
 });
 </script>
+
+<!-- ── FLOATING CONTACT BADGES ── -->
+<div class="float-badges" role="complementary" aria-label="Quick contact buttons">
+  <a href="https://wa.me/84889298858?text=Hello+Dr.+Hoa!+I'd+like+to+book+an+appointment+at+Smile+Care+Dental+Clinic."
+     class="float-btn float-btn-wa" target="_blank" rel="noopener"
+     aria-label="Message on WhatsApp">
+    <span class="float-tooltip" data-en="WhatsApp" data-vi="WhatsApp">WhatsApp</span>
+    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+  <a href="https://zalo.me/84889298858"
+     class="float-btn float-btn-zalo" target="_blank" rel="noopener"
+     aria-label="Message on Zalo">
+    <span class="float-tooltip" data-en="Zalo" data-vi="Zalo">Zalo</span>
+    <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+      <text x="24" y="33" font-family="Arial,sans-serif" font-size="18" font-weight="900" fill="white" text-anchor="middle">Zalo</text>
+    </svg>
+  </a>
+</div>
+
 </body>
 </html>
