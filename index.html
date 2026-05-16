@@ -36,19 +36,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&family=Mulish:wght@300;400;500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --blue:#1a3a8f;--red:#b5202a;--cyan:#00aad4;
-  --color-primary:#1a3a8f;--color-primary-dk:#112870;--color-primary-lt:#e8eef9;
-  --color-accent:#b5202a;--color-accent2:#00aad4;
-  --color-bg:#f7fafd;--color-bg-alt:#edf3f9;
-  --color-dark:#0d1f3c;--color-text:#1a2535;--color-text-muted:#5a6e88;
-  --color-white:#ffffff;--color-success:#0e8a5c;
-  --font-display:'DM Serif Display',serif;--font-body:'Plus Jakarta Sans',sans-serif;--font-vi:'Be Vietnam Pro',sans-serif;
+  --blue:oklch(35% 0.148 265);--red:oklch(43% 0.172 22);--cyan:oklch(67% 0.143 215);
+  --color-primary:oklch(35% 0.148 265);--color-primary-dk:oklch(27% 0.12 265);--color-primary-lt:oklch(95.5% 0.018 265);
+  --color-accent:oklch(43% 0.172 22);--color-accent2:oklch(67% 0.143 215);
+  --color-bg:oklch(98.5% 0.007 265);--color-bg-alt:oklch(96.5% 0.012 265);
+  --color-dark:oklch(19% 0.05 265);--color-text:oklch(22% 0.04 265);--color-text-muted:oklch(52% 0.04 265);
+  --color-white:oklch(99.8% 0.003 265);--color-success:oklch(52% 0.148 158);
+  --font-display:'Source Serif 4',Georgia,serif;--font-body:'Mulish',system-ui,sans-serif;--font-vi:'Be Vietnam Pro',sans-serif;
   --radius-sm:4px;--radius-md:12px;--radius-lg:24px;
-  --shadow-sm:0 1px 4px rgba(26,58,143,.07);--shadow-md:0 4px 24px rgba(26,58,143,.11);--shadow-lg:0 12px 48px rgba(26,58,143,.16);
+  --shadow-sm:0 1px 4px oklch(35% 0.148 265 / 0.07);--shadow-md:0 4px 24px oklch(35% 0.148 265 / 0.11);--shadow-lg:0 12px 48px oklch(35% 0.148 265 / 0.16);
   --transition:220ms cubic-bezier(.4,0,.2,1)
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -68,7 +68,7 @@ a{color:inherit;text-decoration:none}
 .nav.scrolled .nav-logo-text{color:var(--color-primary-dk)}
 .nav-menu{display:flex;align-items:center;gap:2rem;list-style:none}
 .nav-menu a{font-size:.875rem;font-weight:500;color:rgba(255,255,255,.85);transition:color var(--transition)}
-.nav-menu a:hover{color:white}
+.nav-menu a:hover{color:var(--color-white)}
 .nav.scrolled .nav-menu a{color:var(--color-text-muted)}
 .nav.scrolled .nav-menu a:hover{color:var(--color-primary)}
 .nav-right{display:flex;align-items:center;gap:1rem}
@@ -92,7 +92,7 @@ a{color:inherit;text-decoration:none}
 .hero-inner{max-width:1200px;margin:0 auto;padding:7rem 2rem 5rem;position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:.375rem 1rem;font-size:.72rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:1.375rem}
 .hero-eyebrow span.dot{width:6px;height:6px;background:var(--color-accent);border-radius:50%;flex-shrink:0}
-.hero-h1{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.8rem);color:white;line-height:1.1;margin-bottom:1.125rem}
+.hero-h1{font-family:var(--font-display);font-size:clamp(2.4rem,5.5vw,4.1rem);color:var(--color-white);line-height:1.08;margin-bottom:1.125rem;font-weight:700;font-variation-settings:'opsz' 60}
 .hero-h1 em{color:#74d4f0;font-style:italic}
 .hero-tagline{font-size:.875rem;font-weight:500;color:rgba(255,255,255,.55);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem}
 .hero-sub{font-size:1rem;color:rgba(255,255,255,.75);margin-bottom:2rem;line-height:1.7;max-width:460px}
@@ -113,7 +113,7 @@ a{color:inherit;text-decoration:none}
 .hero-photo-main{width:100%;height:320px;object-fit:cover;object-position:center 40%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)}
 .hero-photo-mini{position:absolute;bottom:-20px;right:-10px;width:160px;height:140px;object-fit:cover;border-radius:var(--radius-md);border:4px solid white;box-shadow:var(--shadow-md)}
 .hero-badge{position:absolute;top:16px;left:16px;background:white;border-radius:var(--radius-md);padding:.625rem .875rem;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:.5rem}
-.hero-badge-num{font-family:var(--font-display);font-size:1.5rem;color:var(--color-accent)}
+.hero-badge-num{font-family:var(--font-display);font-size:1.5rem;color:var(--color-accent);font-weight:700;font-variation-settings:'opsz' 24}
 .hero-badge-text{font-size:.72rem;color:var(--color-text-muted);line-height:1.3;font-weight:500}
 
 /* ── TRUST ── */
@@ -122,32 +122,27 @@ a{color:inherit;text-decoration:none}
 .trust-item{display:flex;align-items:center;gap:.875rem;padding:1rem;border-radius:var(--radius-md)}
 .trust-icon{width:44px;height:44px;background:var(--color-primary-lt);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .trust-icon svg{width:22px;height:22px;stroke:var(--color-primary);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.trust-num{font-family:var(--font-display);font-size:1.55rem;color:var(--color-primary-dk);line-height:1}
+.trust-num{font-family:var(--font-display);font-size:1.5rem;color:var(--color-primary-dk);line-height:1;font-weight:700;font-variation-settings:'opsz' 24}
 .trust-label{font-size:.75rem;color:var(--color-text-muted);font-weight:500;margin-top:.1rem}
 
 /* ── SECTIONS ── */
 section{padding:5rem 2rem}
 .section-inner{max-width:1200px;margin:0 auto}
-.section-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--color-accent2);margin-bottom:.625rem}
-.section-title{font-family:var(--font-display);font-size:clamp(1.75rem,3.5vw,2.7rem);color:var(--color-dark);line-height:1.2;margin-bottom:.875rem}
+.section-eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:.5rem}
+.section-title{font-family:var(--font-display);font-size:clamp(1.85rem,3.5vw,2.8rem);color:var(--color-dark);line-height:1.18;margin-bottom:.875rem;font-variation-settings:'opsz' 24}
 .section-sub{font-size:.975rem;color:var(--color-text-muted);max-width:540px;margin-bottom:3rem;line-height:1.7}
 
 /* ── SERVICES ── */
 .services{background:var(--color-bg)}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.125rem}
-.service-card{background:var(--color-white);border-radius:var(--radius-lg);padding:1.625rem;border:1px solid rgba(26,58,143,.07);transition:transform var(--transition),box-shadow var(--transition)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.service-card{background:var(--color-white);border-radius:var(--radius-lg);padding:1.875rem 1.625rem 1.625rem;border:1px solid oklch(35% 0.148 265 / 0.08);border-top:3px solid transparent;transition:transform var(--transition),box-shadow var(--transition)}
 .service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.service-icon{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
-.service-icon.blue{background:var(--color-primary-lt)}
-.service-icon.red{background:#fbeaea}
-.service-icon.cyan{background:#e0f6fc}
-.service-icon svg{width:25px;height:25px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.service-icon.blue svg{stroke:var(--color-primary)}
-.service-icon.red svg{stroke:var(--color-accent)}
-.service-icon.cyan svg{stroke:var(--color-accent2)}
-.service-name{font-weight:700;font-size:.975rem;color:var(--color-dark);margin-bottom:.4rem}
-.service-desc{font-size:.85rem;color:var(--color-text-muted);line-height:1.6}
-.service-price{display:inline-block;margin-top:.625rem;font-size:.8rem;font-weight:600;color:var(--color-accent);background:#fbeaea;border-radius:100px;padding:.2rem .7rem}
+.service-card.s-blue{border-top-color:var(--color-primary)}
+.service-card.s-red{border-top-color:var(--color-accent)}
+.service-card.s-cyan{border-top-color:var(--color-accent2)}
+.service-name{font-family:var(--font-display);font-weight:600;font-size:1.075rem;color:var(--color-dark);margin-bottom:.5rem;line-height:1.25;font-variation-settings:'opsz' 18}
+.service-desc{font-size:.855rem;color:var(--color-text-muted);line-height:1.65}
+.service-price{display:inline-block;margin-top:.75rem;font-size:.78rem;font-weight:700;color:var(--color-accent);background:oklch(43% 0.172 22 / 0.08);border-radius:100px;padding:.2rem .75rem}
 
 /* ── PRICES ── */
 .prices{background:var(--color-white)}
@@ -163,7 +158,7 @@ section{padding:5rem 2rem}
 .price-row-name{font-size:.85rem;color:var(--color-text);line-height:1.4;flex:1}
 .price-row-name small{display:block;font-size:.75rem;color:var(--color-text-muted);font-style:italic}
 .price-row-val{font-size:.82rem;font-weight:700;color:var(--color-accent);text-align:right;white-space:nowrap;flex-shrink:0}
-.price-note{background:linear-gradient(135deg,var(--color-primary),#2a5abf);border-radius:var(--radius-md);padding:1.375rem 1.75rem;margin-top:2rem;display:flex;align-items:center;gap:1rem;color:white}
+.price-note{background:var(--color-primary);border-radius:var(--radius-md);padding:1.375rem 1.75rem;margin-top:2rem;display:flex;align-items:center;gap:1rem;color:var(--color-white)}
 .price-note svg{width:28px;height:28px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .price-note p{font-size:.875rem;line-height:1.6}
 .price-note strong{font-size:1rem;display:block;margin-bottom:.25rem}
@@ -180,7 +175,7 @@ section{padding:5rem 2rem}
 .about-cert-text span{color:var(--color-text-muted);font-weight:400}
 .about-points{display:flex;flex-direction:column;gap:1.25rem;margin-top:2rem}
 .about-point{display:flex;gap:1rem}
-.about-point-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--color-primary),var(--color-accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:.78rem;flex-shrink:0;margin-top:.15rem}
+.about-point-icon{width:32px;height:32px;background:var(--color-primary-lt);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-primary);font-family:var(--font-display);font-weight:700;font-size:.78rem;flex-shrink:0;margin-top:.2rem}
 .about-point h4{font-weight:700;color:var(--color-dark);margin-bottom:.25rem;font-size:.9rem}
 .about-point p{font-size:.85rem;color:var(--color-text-muted);line-height:1.6}
 
@@ -200,7 +195,7 @@ section{padding:5rem 2rem}
 .review-stars svg{width:15px;height:15px;fill:#f5c842}
 .review-text{font-size:.875rem;color:var(--color-text);line-height:1.65;margin-bottom:.875rem;font-style:italic}
 .review-author{display:flex;align-items:center;gap:.625rem}
-.review-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--color-primary),var(--color-accent2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:.72rem;flex-shrink:0}
+.review-avatar{width:34px;height:34px;border-radius:50%;background:var(--color-primary);display:flex;align-items:center;justify-content:center;color:var(--color-white);font-weight:700;font-size:.72rem;flex-shrink:0}
 .review-name{font-weight:600;font-size:.85rem;color:var(--color-dark)}
 .review-meta{font-size:.75rem;color:var(--color-text-muted)}
 
@@ -220,8 +215,8 @@ section{padding:5rem 2rem}
 .map-placeholder svg{width:36px;height:36px;stroke:currentColor;fill:none;stroke-width:1.5;margin:0 auto .625rem}
 .form-group{margin-bottom:.875rem}
 .form-group label{display:block;font-size:.78rem;font-weight:600;color:var(--color-dark);margin-bottom:.3rem;letter-spacing:.03em}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:.7rem .95rem;border:1.5px solid rgba(26,58,143,.14);border-radius:var(--radius-md);font-family:var(--font-body);font-size:.875rem;color:var(--color-text);background:var(--color-bg);outline:none;transition:border-color var(--transition),box-shadow var(--transition)}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--color-accent2);box-shadow:0 0 0 3px rgba(0,170,212,.1)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.75rem 1rem;border:1.5px solid oklch(35% 0.148 265 / 0.14);border-radius:var(--radius-md);font-family:var(--font-body);font-size:.875rem;color:var(--color-text);background:var(--color-bg);outline:none;transition:border-color var(--transition),box-shadow var(--transition)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--color-accent2);box-shadow:0 0 0 3px oklch(67% 0.143 215 / 0.12)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.875rem}
 .form-group textarea{resize:vertical;min-height:88px}
 .form-privacy{display:flex;align-items:flex-start;gap:.5rem;margin-bottom:1rem}
@@ -254,13 +249,14 @@ footer{background:var(--color-dark);color:rgba(255,255,255,.65);padding:3rem 2re
 .footer-bottom a:hover{color:rgba(255,255,255,.65)}
 
 /* ── REVEAL ── */
-[data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+[data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .55s cubic-bezier(0,.4,.15,1),transform .55s cubic-bezier(0,.4,.15,1)}
 [data-reveal].visible{opacity:1;transform:none}
-[data-reveal]:nth-child(2){transition-delay:.08s}
-[data-reveal]:nth-child(3){transition-delay:.16s}
-[data-reveal]:nth-child(4){transition-delay:.24s}
-[data-reveal]:nth-child(5){transition-delay:.32s}
-[data-reveal]:nth-child(6){transition-delay:.4s}
+[data-reveal]:nth-child(2){transition-delay:.07s}
+[data-reveal]:nth-child(3){transition-delay:.14s}
+[data-reveal]:nth-child(4){transition-delay:.21s}
+[data-reveal]:nth-child(5){transition-delay:.28s}
+[data-reveal]:nth-child(6){transition-delay:.35s}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
@@ -401,38 +397,32 @@ footer{background:var(--color-dark);color:rgba(255,255,255,.65);padding:3rem 2re
     <h2 class="section-title" data-en="Complete Dental Care in Da Nang" data-vi="Nha Khoa Toàn Diện Tại Đà Nẵng">Complete Dental Care in Da Nang</h2>
     <p class="section-sub" data-en="From a simple clean to a complete smile makeover — all treatments under one roof with Dr. Hoa and her dedicated team." data-vi="Từ làm sạch đơn giản đến thay đổi nụ cười hoàn toàn — tất cả dịch vụ dưới một mái nhà cùng BS. Hoa và đội ngũ tận tâm.">From a simple clean to a complete smile makeover — all treatments under one roof with Dr. Hoa and her dedicated team.</p>
     <div class="services-grid">
-      <div class="service-card" data-reveal>
-        <div class="service-icon blue"><svg viewBox="0 0 24 24"><path d="M12 2C8.5 2 5.5 4.5 5.5 8.5c0 2.5 1 4.5 2.5 5.5V19c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-5c1.5-1 2.5-3 2.5-5.5C18.5 4.5 15.5 2 12 2z"/></svg></div>
+      <div class="service-card s-blue" data-reveal>
         <div class="service-name" data-en="Scaling & Gum Treatment" data-vi="Lấy Cao Răng & Điều Trị Nướu">Scaling & Gum Treatment</div>
         <p class="service-desc" data-en="Professional cleaning, plaque removal and gum disease treatment for a healthy foundation." data-vi="Lấy cao răng, loại bỏ mảng bám và điều trị viêm nha chu để bảo vệ sức khỏe răng miệng.">Professional cleaning, plaque removal and gum disease treatment for a healthy foundation.</p>
         <span class="service-price">100,000 – 300,000 ₫</span>
       </div>
-      <div class="service-card" data-reveal>
-        <div class="service-icon red"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="service-card s-red" data-reveal>
         <div class="service-name" data-en="Fillings & Root Canal" data-vi="Trám Răng & Điều Trị Tủy">Fillings & Root Canal</div>
         <p class="service-desc" data-en="Tooth-coloured composite fillings and endodontic root canal treatment for adults and children." data-vi="Trám răng composite và điều trị tủy răng cho người lớn và trẻ em.">Tooth-coloured composite fillings and endodontic root canal treatment for adults and children.</p>
         <span class="service-price">250,000 – 2,000,000 ₫</span>
       </div>
-      <div class="service-card" data-reveal>
-        <div class="service-icon cyan"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+      <div class="service-card s-cyan" data-reveal>
         <div class="service-name" data-en="Teeth Whitening" data-vi="Tẩy Trắng Răng">Teeth Whitening</div>
         <p class="service-desc" data-en="In-clinic professional whitening (with free cleaning included) or at-home whitening kit." data-vi="Tẩy trắng tại phòng khám (bao gồm vệ sinh miễn phí) hoặc kit tẩy trắng tại nhà.">In-clinic professional whitening (with free cleaning included) or at-home whitening kit.</p>
         <span class="service-price">800,000 – 1,500,000 ₫</span>
       </div>
-      <div class="service-card" data-reveal>
-        <div class="service-icon blue"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+      <div class="service-card s-blue" data-reveal>
         <div class="service-name" data-en="Porcelain Crowns & Veneers" data-vi="Răng Sứ & Phục Hình Thẩm Mỹ">Porcelain Crowns & Veneers</div>
         <p class="service-desc" data-en="Metal, titanium, zirconia, Cercon and Lava porcelain crowns for a natural, lasting result." data-vi="Răng sứ kim loại, titan, zirconia, Cercon và Lava cho kết quả tự nhiên và bền lâu.">Metal, titanium, zirconia, Cercon and Lava porcelain crowns for a natural, lasting result.</p>
         <span class="service-price">1,000,000 – 7,000,000 ₫</span>
       </div>
-      <div class="service-card" data-reveal>
-        <div class="service-icon red"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="service-card s-red" data-reveal>
         <div class="service-name" data-en="Orthodontics (Braces)" data-vi="Chỉnh Nha (Niềng Răng)">Orthodontics (Braces)</div>
         <p class="service-desc" data-en="Removable braces, fixed metal/ceramic braces and Invisalign-style clear aligners for all ages." data-vi="Niềng tháo lắp, niềng cố định kim loại/sứ và niềng trong suốt Invisalign cho mọi lứa tuổi.">Removable braces, fixed metal/ceramic braces and Invisalign-style clear aligners for all ages.</p>
         <span class="service-price">3,000,000 – 150,000,000 ₫</span>
       </div>
-      <div class="service-card" data-reveal>
-        <div class="service-icon cyan"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+      <div class="service-card s-cyan" data-reveal>
         <div class="service-name" data-en="Extractions & Wisdom Teeth" data-vi="Nhổ Răng & Răng Khôn">Extractions & Wisdom Teeth</div>
         <p class="service-desc" data-en="Painless tooth extractions — baby teeth free of charge, adult extractions and complex wisdom tooth removal." data-vi="Nhổ răng không đau — nhổ răng sữa miễn phí, nhổ răng người lớn và răng khôn phức tạp.">Painless tooth extractions — baby teeth free of charge, adult extractions and complex wisdom tooth removal.</p>
         <span class="service-price" data-en="Free – 5,000,000 ₫" data-vi="Miễn phí – 5.000.000 ₫">Free – 5,000,000 ₫</span>
